@@ -1,16 +1,14 @@
-import { useState, useRef, useCallback } from "react";
-
-const testimonials = [
-  { name: "Ariel Levit", role: "Agency Owner", video: "/assets/testimonials/videos/square/ariel_levit.mp4" },
-  { name: "Eric Wood", role: "Founder", video: "/assets/testimonials/videos/square/eric_wood.mp4" },
-  { name: "Jake Morrison", role: "Entrepreneur", video: "/assets/testimonials/videos/square/jake_morrison.mp4" },
-  { name: "Jean-Marc", role: "Business Owner", video: "/assets/testimonials/videos/square/jean_marc.mp4" },
-  { name: "Liam Carter", role: "Consultant", video: "/assets/testimonials/videos/square/liam_carter.mp4" },
-  { name: "Quincy Thomas", role: "Agency Owner", video: "/assets/testimonials/videos/square/quincy_thomas.mp4" },
-  { name: "Roy Velasquez", role: "CEO", video: "/assets/testimonials/videos/square/roy_velasquez.mp4" },
-  { name: "Ryan Caldwell", role: "Growth Expert", video: "/assets/testimonials/videos/square/ryan_caldwell.mp4" },
-  { name: "Sadek Aber", role: "Founder", video: "/assets/testimonials/videos/square/sadek_aber.mp4" },
-  { name: "Syed Khalid", role: "Agency Owner", video: "/assets/testimonials/videos/square/syed_khalid.mp4" },
+const loomEmbeds = [
+  "https://www.loom.com/embed/c40fa0a4c2334e358f0ff4bc8e243ed9",
+  "https://www.loom.com/embed/4946b0101ffa470db83099a572e9c8f1",
+  "https://www.loom.com/embed/639f190835c848d2abed2d7b330e74dc",
+  "https://www.loom.com/embed/4c21f88038a445d69ed077e225d4346b",
+  "https://www.loom.com/embed/e9218a22b6e4449483b4c39e9057129b",
+  "https://www.loom.com/embed/95f9857aa3384642bcb57076519077ad",
+  "https://www.loom.com/embed/9d57697974764dc0809f5e385c45e65c",
+  "https://www.loom.com/embed/0dc873d4bfe7457e8bc40122242dbe53",
+  "https://www.loom.com/embed/13d8a705b2d44e44adfa819800db5819",
+  "https://www.loom.com/embed/044932a6daa847c5bc230ec94652630a",
 ];
 
 const imageTestimonials = [
@@ -28,40 +26,6 @@ const imageTestimonials = [
 ];
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-
-  const handleClick = useCallback(
-    (index: number) => {
-      const clickedVideo = videoRefs.current[index];
-
-      if (activeIndex === index) {
-        // Pause the currently playing video
-        if (clickedVideo) {
-          clickedVideo.pause();
-          clickedVideo.muted = true;
-        }
-        setActiveIndex(null);
-      } else {
-        // Pause previously active video
-        if (activeIndex !== null) {
-          const prevVideo = videoRefs.current[activeIndex];
-          if (prevVideo) {
-            prevVideo.pause();
-            prevVideo.muted = true;
-          }
-        }
-        // Play the clicked video
-        if (clickedVideo) {
-          clickedVideo.muted = false;
-          clickedVideo.play();
-        }
-        setActiveIndex(index);
-      }
-    },
-    [activeIndex]
-  );
-
   return (
     <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(180deg, #F8FAFC 0%, #FFF7ED 50%, #F8FAFC 100%)' }}>
       <div className="max-w-5xl mx-auto">
@@ -76,58 +40,22 @@ export default function Testimonials() {
         </p>
 
         {/* Video testimonials grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {testimonials.map((t, i) => {
-            const isPlaying = activeIndex === i;
-            return (
-              <div
-                key={i}
-                className="relative group cursor-pointer rounded-xl overflow-hidden bg-white shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-slate-100 aspect-square"
-                onClick={() => handleClick(i)}
-              >
-                <video
-                  ref={(el) => {
-                    videoRefs.current[i] = el;
-                  }}
-                  className="w-full h-full object-cover"
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  src={t.video}
-                />
-
-                {/* Bottom gradient overlay */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
-
-                {/* Name + role */}
-                <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <p className="text-white text-sm font-semibold">{t.name}</p>
-                  <p className="text-white/70 text-xs">{t.role}</p>
-                </div>
-
-                {/* Play button overlay (shown when paused) */}
-                {!isPlaying && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6 4L16 10L6 16V4Z"
-                          fill="#0F172A"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {loomEmbeds.map((url, i) => (
+            <div
+              key={i}
+              className="rounded-xl overflow-hidden bg-white shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-slate-100 aspect-video"
+            >
+              <iframe
+                src={url}
+                allowFullScreen
+                allow="autoplay; fullscreen"
+                className="w-full h-full"
+                loading="lazy"
+                title={`Member testimonial ${i + 1}`}
+              />
+            </div>
+          ))}
         </div>
 
         {/* Image testimonials masonry grid */}
@@ -136,7 +64,7 @@ export default function Testimonials() {
             <img
               key={i}
               src={`/assets/testimonials/${filename}`}
-              alt={filename.replace(".png", "")}
+              alt="Member testimonial"
               className="w-full rounded-xl shadow-sm border border-slate-100"
               loading="lazy"
             />
