@@ -1,0 +1,71 @@
+---
+// AuthorityBar — stats + logo marquee
+const stats = [
+  { number: "1,297+", label: "Active Members" },
+  { number: "69", label: "Agencies Launched" },
+  { number: "40+", label: "Ready-Made Blueprints" },
+];
+
+const logos = [
+  { src: "/assets/ghl-logo.webp", alt: "GoHighLevel" },
+  { src: "/assets/logos/n8n.png", alt: "n8n" },
+  { src: "/assets/logos/openai.png", alt: "OpenAI" },
+  { src: "/assets/logos/skool.png", alt: "Skool" },
+  { src: "/assets/logos/antigravity.png", alt: "Antigravity" },
+];
+---
+
+<section class="reveal py-14" style="background: linear-gradient(180deg, #EEF2FF 0%, #F8FAFC 100%);">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- Stat cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {stats.map((stat) => (
+        <div class="glass-card p-6 text-center">
+          <p class="text-3xl font-bold text-accent">{stat.number}</p>
+          <p class="text-sm text-secondary mt-1">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Logo marquee — endless scroll -->
+    <div
+      class="mt-10 overflow-hidden relative"
+      style="-webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);"
+    >
+      <div class="marquee-track flex w-max">
+        {/* Repeat 4 times for seamless loop */}
+        {[...Array(4)].map(() => (
+          <div class="flex items-center gap-16 px-8 shrink-0">
+            {logos.map((logo) => (
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                class="h-10 opacity-60 hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-track {
+    animation: marquee-scroll 25s linear infinite;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+</style>

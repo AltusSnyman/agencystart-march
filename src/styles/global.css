@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-main text-primary font-sans antialiased;
+		overflow-x: hidden;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		@apply font-sans font-bold tracking-tight text-primary;
+	}
+}
+
+@layer components {
+	/* ── True Liquid Glass Effect ── */
+	.glass-card {
+		background: rgba(255, 255, 255, 0.45);
+		backdrop-filter: blur(20px) saturate(180%);
+		-webkit-backdrop-filter: blur(20px) saturate(180%);
+		border: 1px solid rgba(255, 255, 255, 0.7);
+		border-radius: 20px;
+		box-shadow:
+			0 8px 32px rgba(0, 0, 0, 0.08),
+			inset 0 1px 0 rgba(255, 255, 255, 0.8),
+			inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+		transition: all 0.3s ease;
+	}
+
+	.glass-card:hover {
+		box-shadow:
+			0 12px 40px rgba(0, 0, 0, 0.12),
+			inset 0 1px 0 rgba(255, 255, 255, 0.9),
+			inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+		border-color: rgba(255, 255, 255, 0.85);
+	}
+
+	/* Stronger glass variant for prominent cards */
+	.glass-card-strong {
+		background: rgba(255, 255, 255, 0.55);
+		backdrop-filter: blur(24px) saturate(200%);
+		-webkit-backdrop-filter: blur(24px) saturate(200%);
+		border: 1.5px solid rgba(255, 255, 255, 0.8);
+		border-radius: 24px;
+		box-shadow:
+			0 12px 48px rgba(0, 0, 0, 0.1),
+			inset 0 2px 0 rgba(255, 255, 255, 0.9),
+			inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+		transition: all 0.3s ease;
+	}
+
+	.glass-card-solid {
+		@apply bg-white border border-slate-200/60 rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.04)];
+	}
+
+	.btn-cta {
+		@apply px-8 py-4 bg-cta text-white font-semibold rounded-xl shadow-[0_4px_20px_rgba(249,115,22,0.4)] hover:bg-cta-dark hover:shadow-[0_6px_28px_rgba(249,115,22,0.5)] transition-all duration-300 hover:-translate-y-0.5 text-center cursor-pointer inline-block;
+	}
+
+	.btn-secondary {
+		@apply px-8 py-4 bg-accent text-white font-semibold rounded-xl shadow-[0_4px_20px_rgba(37,99,235,0.3)] hover:bg-accent-dark transition-all duration-300 hover:-translate-y-0.5 text-center cursor-pointer inline-block;
+	}
+
+	.btn-ghost {
+		@apply px-8 py-4 bg-transparent border border-slate-300 text-primary font-semibold rounded-xl hover:bg-slate-50 transition-all duration-300 text-center cursor-pointer inline-block;
+	}
+
+	.section-padding {
+		@apply py-20 md:py-28 px-4 sm:px-6 lg:px-8;
+	}
+
+	.section-container {
+		@apply max-w-5xl mx-auto;
+	}
+
+	.section-title {
+		@apply text-3xl sm:text-4xl lg:text-5xl font-bold text-primary text-center mb-4;
+	}
+
+	.section-subtitle {
+		@apply text-lg sm:text-xl text-secondary text-center max-w-2xl mx-auto mb-12;
+	}
+}
+
+/* ── Section Dividers ── */
+.section-divider {
+	height: 1px;
+	background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.3), transparent);
+}
+
+/* Scroll-Reveal Animation System */
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+	will-change: opacity, transform;
+}
+
+.reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* Liquid glass ambient background blobs */
+.glass-blob {
+	position: absolute;
+	border-radius: 50%;
+	filter: blur(80px);
+	pointer-events: none;
+	animation: glass-shimmer 6s ease-in-out infinite;
+}

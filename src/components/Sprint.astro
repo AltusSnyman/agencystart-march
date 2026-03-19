@@ -1,0 +1,57 @@
+---
+const steps = [
+  { day: "Day 1", title: "Infrastructure Setup", desc: "Connect your domain, DNS, and core settings." },
+  { day: "Day 2", title: "Website Deployment", desc: "One-click install your professional website." },
+  { day: "Day 3", title: "Booking System", desc: "Set up calendar, automations, and client intake." },
+  { day: "Day 4", title: "Payments", desc: "Connect Stripe and start accepting money." },
+  { day: "Day 5", title: "Go Live", desc: "A2P compliance, final checks, and launch." },
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="section-container">
+    <h2 class="section-title reveal">The 5-Day Agency Setup Sprint</h2>
+    <p class="section-subtitle reveal reveal-delay-1">Follow the structured sprint to set up your agency infrastructure. Results require effort and vary by individual.</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start reveal reveal-delay-2">
+      <!-- LEFT: Loom Video -->
+      <div class="glass-card p-2 overflow-hidden">
+        <iframe
+          src="https://www.loom.com/embed/2b7bbca1095842b7a29f280a78b34daa"
+          class="w-full aspect-video rounded-xl"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <!-- RIGHT: 5 Steps -->
+      <div class="flex flex-col">
+        {steps.map((step, i) => (
+          <>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-accent text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+                {i + 1}
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-semibold text-accent uppercase tracking-wide">{step.day}</p>
+                <p class="text-lg font-semibold text-[#0F172A]">{step.title}</p>
+                <p class="text-sm text-[#64748B]">{step.desc}</p>
+              </div>
+            </div>
+            {i < steps.length - 1 && (
+              <div class="w-0.5 h-6 bg-slate-200 ml-5"></div>
+            )}
+          </>
+        ))}
+      </div>
+    </div>
+
+    <div class="text-center reveal reveal-delay-3">
+      <a href="https://checkout.aiagencymentorship.ai/" class="btn-cta mt-12 inline-block mx-auto">
+        Start Your 5-Day Sprint
+      </a>
+    </div>
+  </div>
+</section>

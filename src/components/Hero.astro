@@ -1,0 +1,75 @@
+---
+// Hero section — high contrast with GHL robot mascot
+---
+
+<section class="relative overflow-hidden pt-24 md:pt-32 pb-20 md:pb-28 px-4 sm:px-6 lg:px-8">
+  <!-- Hero background — gradient for contrast -->
+  <div class="absolute inset-0 z-0" style="background: linear-gradient(180deg, #1E293B 0%, #0F172A 60%, #1E3A5F 100%);"></div>
+
+  <!-- Ambient glow spots -->
+  <div class="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full pointer-events-none z-[1]" style="background: radial-gradient(ellipse, rgba(37,99,235,0.2) 0%, transparent 70%);"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-32 z-[1]" style="background: linear-gradient(to bottom, transparent, #EEF2FF);"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center">
+      <!-- Left: Text content -->
+      <div class="text-center lg:text-left">
+        <!-- Small badge -->
+        <div class="reveal mb-6">
+          <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white/90 font-medium text-sm px-5 py-2.5 rounded-full border border-white/20">
+            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5"/></svg>
+            1,297+ members saving $400/mo
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="reveal text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] max-w-4xl">
+          Get GoHighLevel's Full Enterprise Stack for
+          <span class="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent"> $97/mo</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="reveal mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+          Instead of $497/mo. Grey-label. Unlimited sub-accounts. No HighLevel branding. Plus 400+ training videos to go from zero to running agency in 5 days.
+        </p>
+
+        <!-- CTA -->
+        <div class="reveal mt-10">
+          <a
+            href="https://checkout.aiagencymentorship.ai/"
+            class="btn-cta inline-block text-lg px-12 py-5 text-white"
+          >
+            Claim Your $97/mo Spot
+          </a>
+        </div>
+
+        <!-- Trust text -->
+        <p class="reveal mt-6 text-sm text-slate-400 flex items-center justify-center lg:justify-start gap-4">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            30-day money-back guarantee
+          </span>
+          <span class="w-1 h-1 bg-slate-500 rounded-full"></span>
+          <span>Cancel anytime</span>
+        </p>
+
+        <!-- Logo row -->
+        <div class="reveal mt-10 inline-flex items-center gap-6 bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl px-6 py-3">
+          <span class="text-xs text-slate-400 uppercase tracking-wider font-medium">Powered by</span>
+          <img src="/assets/ghl-logo.webp" alt="GoHighLevel" class="h-8 rounded" loading="lazy" />
+          <img src="/assets/logos/skool.png" alt="Skool" class="h-7 opacity-70" loading="lazy" />
+          <img src="/assets/logos/openai.png" alt="OpenAI" class="h-7 opacity-70" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Right: Robot mascot (hidden on mobile, shown on lg+) -->
+      <div class="hidden lg:flex items-center justify-center reveal">
+        <img
+          src="/assets/ghl-robot3.webp"
+          alt="GoHighLevel Mascot"
+          class="w-72 xl:w-80 animate-float drop-shadow-2xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>

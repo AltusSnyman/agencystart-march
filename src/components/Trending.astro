@@ -1,0 +1,114 @@
+---
+// Trending.astro — "What's Trending" section with logos below
+---
+
+<section class="section-padding" style="background: linear-gradient(180deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
+  <div class="section-container">
+    <!-- Badge -->
+    <div class="flex justify-center">
+      <span class="inline-flex items-center gap-2 bg-orange-50 text-cta font-semibold text-sm px-4 py-2 rounded-full mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+        </svg>
+        Trending Now
+      </span>
+    </div>
+
+    <h2 class="section-title">What's Trending Right Now in the Community</h2>
+    <p class="section-subtitle">
+      Our members are building with the hottest AI tools — and you get the training included.
+    </p>
+
+    <!-- Two cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Card 1: OpenClaw -->
+      <div class="glass-card-strong p-8 reveal">
+        <span class="inline-flex bg-red-50 text-red-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+          Going Viral
+        </span>
+        <h3 class="text-2xl font-bold text-primary mb-2">OpenClaw</h3>
+        <p class="text-lg font-medium text-primary/80 mb-3">AI Personal Agents</p>
+        <p class="text-secondary leading-relaxed mb-5">
+          The open-source AI agent framework everyone is talking about. Learn to build personal AI agents that automate your business operations, handle client work, and scale your output.
+        </p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-center gap-2.5 text-sm text-primary/80">
+            <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            Build agents with no coding required
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-primary/80">
+            <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            Automate client deliverables
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-primary/80">
+            <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            New training modules added weekly
+          </li>
+        </ul>
+        <!-- OpenClaw logo/image below -->
+        <div class="rounded-xl overflow-hidden bg-white p-4 flex items-center justify-center">
+          <img src="/assets/logos/openclaw.jpg" alt="OpenClaw" class="max-h-32 w-auto object-contain" />
+        </div>
+      </div>
+
+      <!-- Card 2: Claude Cowork & Vibe Coding -->
+      <div class="glass-card-strong p-8 reveal reveal-delay-1">
+        <span class="inline-flex bg-purple-50 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+          Hot Right Now
+        </span>
+        <h3 class="text-2xl font-bold text-primary mb-2">Claude Cowork</h3>
+        <p class="text-lg font-medium text-primary/80 mb-3">Vibe Coding — Build Software in Plain English</p>
+        <p class="text-secondary leading-relaxed mb-5">
+          Build custom software by typing in plain English. No coding experience needed. Our members are using Claude Code and Antigravity to build custom applications for clients. Results vary based on effort and experience.
+        </p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-center gap-2.5 text-sm text-primary/80">
+            <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            Natural language to full-stack apps
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-primary/80">
+            <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            Sell custom software to clients
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-primary/80">
+            <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            Complete Antigravity + Cursor training
+          </li>
+        </ul>
+        <!-- Claude Cowork image below -->
+        <div class="rounded-xl overflow-hidden bg-white p-4 flex items-center justify-center">
+          <img src="/assets/logos/claudecowork.jpg" alt="Claude Cowork" class="max-h-32 w-auto object-contain" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom note -->
+    <p class="text-center text-sm text-secondary mt-8 font-medium">
+      Training added weekly as these tools evolve. You'll never fall behind.
+    </p>
+  </div>
+</section>

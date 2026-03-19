@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Get GoHighLevel's full enterprise stack for $97/mo instead of $497/mo. Grey-label, unlimited sub-accounts, 400+ training videos, and a 5-day launch sprint." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content="Get GoHighLevel's full enterprise stack for $97/mo instead of $497/mo. Grey-label, unlimited sub-accounts, 400+ training videos." />
+		<meta property="og:image" content={new URL('/assets/smart-hybrid-dashboard.png', Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content="Get GoHighLevel's full enterprise stack for $97/mo instead of $497/mo. Grey-label, unlimited sub-accounts, 400+ training videos." />
+		<meta property="twitter:image" content={new URL('/assets/smart-hybrid-dashboard.png', Astro.url)} />
+
+		<!-- Meta Pixel Code -->
+		<script is:inline>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '3022523167941883');
+			fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=3022523167941883&ev=PageView&noscript=1"
+		/></noscript>
+
+		<!-- LeadConnector Chat Widget -->
+		<script src="https://widgets.leadconnectorhq.com/loader.js"
+		  data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+		  data-widget-id="6807407a30666b2d3727d268" async>
+		</script>
+	</head>
+	<body class="text-primary relative min-h-screen font-sans antialiased" style="background: linear-gradient(135deg, #EEF2FF 0%, #F8FAFC 25%, #F0F9FF 50%, #F8FAFC 75%, #EFF6FF 100%);">
+		<!-- Ambient glass blobs — more visible for liquid glass feel -->
+		<div class="glass-blob w-[700px] h-[700px] top-[-200px] left-[-200px] fixed z-0" style="background: rgba(99, 102, 241, 0.12);"></div>
+		<div class="glass-blob w-[600px] h-[600px] top-[30%] right-[-250px] fixed z-0" style="background: rgba(249, 115, 22, 0.08);"></div>
+		<div class="glass-blob w-[500px] h-[500px] top-[60%] left-[-150px] fixed z-0" style="background: rgba(37, 99, 235, 0.1);"></div>
+		<div class="glass-blob w-[400px] h-[400px] bottom-[5%] right-[10%] fixed z-0" style="background: rgba(139, 92, 246, 0.08);"></div>
+
+		<div class="relative z-10">
+			<slot />
+		</div>
+	</body>
+</html>
