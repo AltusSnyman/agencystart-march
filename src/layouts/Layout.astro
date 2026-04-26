@@ -34,27 +34,20 @@ const { title } = Astro.props;
 		<meta property="twitter:description" content="Get GoHighLevel's full enterprise stack for $97/mo instead of $497/mo. Grey-label, unlimited sub-accounts, 400+ training videos." />
 		<meta property="twitter:image" content={new URL('/assets/smart-hybrid-dashboard.png', Astro.url)} />
 
-		<!-- Meta Pixel Code -->
-		<script is:inline>
-			!function(f,b,e,v,n,t,s)
-			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window, document,'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '1317570993546433');
-			fbq('track', 'PageView');
-		</script>
-		<noscript><img height="1" width="1" style="display:none"
-			src="https://www.facebook.com/tr?id=1317570993546433&ev=PageView&noscript=1"
-		/></noscript>
-
 		<!-- LeadConnector Chat Widget -->
 		<script src="https://widgets.leadconnectorhq.com/loader.js"
 		  data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
 		  data-widget-id="6807407a30666b2d3727d268" async>
+		</script>
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16572239172"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'AW-16572239172');
 		</script>
 	</head>
 	<body class="text-primary relative min-h-screen font-sans antialiased" style="background: linear-gradient(135deg, #EEF2FF 0%, #F8FAFC 25%, #F0F9FF 50%, #F8FAFC 75%, #EFF6FF 100%);">
